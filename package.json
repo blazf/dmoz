@@ -1,0 +1,39 @@
+{
+  "name": "dmoz",
+  "version": "1.0.0",
+  "description": "Classificator into DMoz taxonomy",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "license": "BSD-2-Clause-FreeBSD",
+  "author": "Blaz Fortuna <blaz@blazfortuna.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blazf/dmoz"
+  },
+  "main": "./index.js",
+  "dependencies": {
+    "node-pre-gyp": "0.6.x"
+  },
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
+  "devDependencies": {
+    "async": "^2.0.0-rc.6",
+    "aws-sdk": "~2.0.0-rc.15",
+    "jsdoc": "~3.3.0-beta3",
+    "jsdoc-baseline": "https://github.com/hegemonic/jsdoc-baseline.git#d161c4136e12ca5d5674747d4b115067a6980185",
+    "mocha": "2.1.x",
+    "mustache": "~2.2.0"
+  },
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
+  },
+  "binary": {
+    "module_name": "dmoz",
+    "module_path": "./out"
+  },
+  "keywords": [
+    "dmoz"
+  ]
+}
