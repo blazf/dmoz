@@ -116,6 +116,10 @@
                 # core dmoz module
                 'dmoz.h',
                 'dmoz.cpp',
+                # support functions
+                'qminer/src/nodejs/nodeutil.h',
+                'qminer/src/nodejs/nodeutil.hpp',
+                'qminer/src/nodejs/nodeutil.cpp'
             ],
             'include_dirs': [
                 'qminer/src/glib/base',

@@ -27,7 +27,7 @@
     "mustache": "~2.2.0"
   },
   "scripts": {
-    "install": "node-pre-gyp install --fallback-to-build",
+    "install": "node-pre-gyp install --fallback-to-build"
   },
   "binary": {
     "module_name": "dmoz",

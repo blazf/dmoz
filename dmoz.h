@@ -9,6 +9,7 @@
 #include <node_object_wrap.h>
 
 #include <base.h>
+#include <mine.h>
 #include "../qminer/src/nodejs/nodeutil.h"
 
 /**
@@ -19,11 +20,21 @@
 * var dmoz = require('dmoz');
 */
 class TJsDmoz : public node::ObjectWrap {
-public:
+  public:
     // Node framework
     static void Init(v8::Handle<v8::Object> exports);
-private:
-    JsDeclareFunction(config);
+
+  private:
+    static PDMozCfy DMozCfy;
+
+  private:
+    /// Parse dmoz bow files and create classifier according to the filter
+    JsDeclareFunction(initDmoz);
+    /// Load classifier
+    JsDeclareFunction(loadDmoz);
+    /// Classify
+    JsDeclareFunction(classify);
+
 };
 
 #endif
