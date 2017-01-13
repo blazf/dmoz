@@ -10,7 +10,7 @@
 
 #include <base.h>
 #include <mine.h>
-#include "../qminer/src/nodejs/nodeutil.h"
+#include <nodeutil.h>
 
 /**
 * DMoz module

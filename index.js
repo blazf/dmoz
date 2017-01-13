@@ -58,7 +58,7 @@ module.exports = class Dmoz {
         return category.slice(4);
     }
 
-    classify(text) {
+    classifyTop(text) {
         let self = this;
         // classify document
         let results = self._classifier.classify(text, 1);
@@ -66,5 +66,21 @@ module.exports = class Dmoz {
         let topCat = results.categories.length > 0 ? results.categories[0] : "Top/";
         // clean the name and return it
         return self._cleanCategory(topCat);
+    }
+
+    classify(text, maxCats) {
+        let self = this;
+        // classify document
+        let results = self._classifier.classify(text, 3 * maxCats);
+        // clean categories
+        results = results.categories.map(cat => self._cleanCategory(cat));
+        // get first unique maxCats
+        let unique = new Set();
+        for (let category of results) {
+            unique.add(category);
+            if (unique.size == maxCats) { break; }
+        }
+        // return top unique categories
+        return Array.from(unique);
     }
 }
