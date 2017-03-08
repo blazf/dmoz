@@ -12,23 +12,10 @@
     "url": "https://github.com/blazf/dmoz"
   },
   "main": "./index.js",
-  "dependencies": {
-    "node-pre-gyp": "0.6.x"
-  },
-  "bundledDependencies": [
-    "node-pre-gyp"
-  ],
-  "devDependencies": {
-    "async": "^2.0.0-rc.6",
-    "aws-sdk": "~2.0.0-rc.15",
-    "jsdoc": "~3.3.0-beta3",
-    "jsdoc-baseline": "https://github.com/hegemonic/jsdoc-baseline.git#d161c4136e12ca5d5674747d4b115067a6980185",
-    "mocha": "2.1.x",
-    "mustache": "~2.2.0"
-  },
-  "scripts": {
-    "install": "node-pre-gyp install --fallback-to-build"
-  },
+  "dependencies": { },
+  "bundledDependencies": [ ],
+  "devDependencies": { },
+  "scripts": { },
   "binary": {
     "module_name": "dmoz",
     "module_path": "./out"
