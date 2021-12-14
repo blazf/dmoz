@@ -9,7 +9,7 @@
 
 using namespace v8;
 
-void TJsDmoz::Init(v8::Handle<v8::Object> Exports) {
+void TJsDmoz::Init(v8::Local<v8::Object> Exports) {
     v8::Isolate* Isolate = v8::Isolate::GetCurrent();
     v8::HandleScope HandleScope(Isolate);
 
@@ -75,18 +75,18 @@ void TJsDmoz::classify(const v8::FunctionCallbackInfo<v8::Value>& Args) {
     v8::Local<v8::Object> ResObj = v8::Object::New(Isolate);
     v8::Local<v8::Object> CatNmArr = v8::Array::New(Isolate, CatNmWgtV.Len());
     for (int CatNmN = 0; CatNmN < CatNmWgtV.Len(); CatNmN++) {
-        CatNmArr->Set(CatNmN, v8::String::NewFromUtf8(Isolate, CatNmWgtV[CatNmN].Key.CStr()));
+        Nan::Set(CatNmArr, CatNmN, v8::String::NewFromUtf8(Isolate, CatNmWgtV[CatNmN].Key.CStr()).ToLocalChecked());
     }
-    ResObj->Set(v8::String::NewFromUtf8(Isolate, "categories"), CatNmArr);
+    Nan::Set(ResObj, v8::String::NewFromUtf8(Isolate, "categories").ToLocalChecked(), CatNmArr);
     v8::Local<v8::Object> KeyWdArr = v8::Array::New(Isolate, KeyWdWgtV.Len());
     for (int KeyWdN = 0; KeyWdN < KeyWdWgtV.Len(); KeyWdN++) {
-        KeyWdArr->Set(KeyWdN, v8::String::NewFromUtf8(Isolate, KeyWdWgtV[KeyWdN].Key.CStr()));
+        Nan::Set(KeyWdArr, KeyWdN, v8::String::NewFromUtf8(Isolate, KeyWdWgtV[KeyWdN].Key.CStr()).ToLocalChecked());
     }
-    ResObj->Set(v8::String::NewFromUtf8(Isolate, "keywords"), KeyWdArr);
+    Nan::Set(ResObj, v8::String::NewFromUtf8(Isolate, "keywords").ToLocalChecked(), KeyWdArr);
     Args.GetReturnValue().Set(ResObj);
 }
 
-void Init(Handle<Object> Exports) {
+void Init(Local<Object> Exports) {
     TJsDmoz::Init(Exports);
 }
 
