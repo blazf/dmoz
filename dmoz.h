@@ -22,7 +22,7 @@
 class TJsDmoz : public node::ObjectWrap {
   public:
     // Node framework
-    static void Init(v8::Handle<v8::Object> exports);
+    static void Init(v8::Local<v8::Object> exports);
 
   private:
     static PDMozCfy DMozCfy;

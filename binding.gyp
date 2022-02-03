@@ -9,7 +9,8 @@
         'LIN_ALG_LIB%': '',
         #64 bit indexing for BLAS
         'INDEX_64%': 'NINDEX_64',
-        'INTEL%': 'NINTEL'
+        'INTEL%': 'NINTEL',
+        'NAN_LIB_PATH%':'node_modules/nan'
     },
     'target_defaults': {
         'default_configuration': 'Release',
@@ -129,7 +130,8 @@
                 'qminer/src/glib/concurrent/',
                 'qminer/src/third_party/sole/',
                 '<(LIN_ALG_INCLUDE)',
-                '<(LIN_EIGEN_INCLUDE)'
+                '<(LIN_EIGEN_INCLUDE)',
+                '<(NAN_LIB_PATH)'
             ],
             'dependencies': [
                 'glib'

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Classificator into DMoz taxonomy",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=12.0.0"
   },
   "license": "BSD-2-Clause-FreeBSD",
   "author": "Blaz Fortuna <blaz@blazfortuna.com>",
@@ -12,10 +12,13 @@
     "url": "https://github.com/blazf/dmoz"
   },
   "main": "./index.js",
-  "dependencies": { },
-  "bundledDependencies": [ ],
-  "devDependencies": { },
-  "scripts": { },
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^2.14.2",
+    "node-gyp": "^8.4.1"
+  },
+  "bundledDependencies": [],
+  "scripts": {},
   "binary": {
     "module_name": "dmoz",
     "module_path": "./out"
